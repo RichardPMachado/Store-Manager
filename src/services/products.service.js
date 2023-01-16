@@ -1,5 +1,5 @@
 const { productsModel } = require('../models/index');
-// const schema = require('..');
+// const schema = require('./validations/schemas');
 
 const findAll = async () => {
   const products = await productsModel.findAll();
@@ -10,7 +10,7 @@ const findById = async (productId) => {
   const product = await productsModel.findById(productId);
   if (product) { return { type: null, message: product }; }
 
-  return { type: 'PRODUCT_NOT_FOUND', message: 'product not found' };
+  return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
 };
 
 // const createProduct = async ({ name }) => {
