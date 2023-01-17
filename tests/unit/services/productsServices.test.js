@@ -20,18 +20,22 @@ describe("Service de Products", function () {
         .resolves(productsMock.allProductsResponse);
 
       const result = await productsService.findAll();
-      expect(result).to.be.deep.equal(productsMock.allProductsResponse);
+      
+      expect(result.type).to.be.equal(null);
+      expect(result.message).to.be.deep.equal(productsMock.allProductsResponse);
     });
   });
   
   describe(" Listar produto pelo id", function () {
-    // it('Deve rotornar false se produto não existe', async function () {
-    //   sinon.stub(productsModel, 'findById')
-    //     .resolves(undefined);
+    it('Deve rotornar false se produto não existe', async function () {
+      sinon.stub(productsModel, 'findById')
+        .resolves(undefined);
       
-    //   const result = await productsModel.findById(999);
-    //   expect(result).to.be.false;
-    // });
+      const result = await productsService.findById(998);
+
+      expect(result.type).to.be.equal("PRODUCT_NOT_FOUND");
+      expect(result.message).to.be.equal("Product not found");
+    });
 
     it("Deve retornar o produto requerido", async function () {
       sinon
@@ -39,7 +43,9 @@ describe("Service de Products", function () {
         .resolves(productsMock.allProductsResponse[1]);
 
       const result = await productsService.findById(2);
-      expect(result).to.be.deep.equal(productsMock.allProductsResponse[1]);
+
+      expect(result.type).to.be.equal(null);
+      expect(result.message).to.be.deep.equal(productsMock.allProductsResponse[1]);
     });
   });
 });
