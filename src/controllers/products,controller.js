@@ -3,7 +3,6 @@ const { productsService } = require('../services/index');
 
 const listProducts = async (_req, res) => {
   const { type, message } = await productsService.findAll();
-  console.log(type);
 
   if (type) return res.status(mapError(type)).json(message);
 

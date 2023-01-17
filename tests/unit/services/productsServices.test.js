@@ -27,7 +27,7 @@ describe("Service de Products", function () {
   });
   
   describe(" Listar produto pelo id", function () {
-    it('Deve rotornar false se produto não existe', async function () {
+    it('Deve rotornar "Product not found" se produto não existe', async function () {
       sinon.stub(productsModel, 'findById')
         .resolves(undefined);
       
