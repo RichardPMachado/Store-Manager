@@ -26,11 +26,10 @@ describe("Service de Products", function () {
     });
   });
   
-  describe(" Listar produto pelo id", function () {
+  describe("Buscar um produto pelo id", function () {
     it('Deve rotornar "Product not found" se produto não existe', async function () {
-      sinon.stub(productsModel, 'findById')
-        .resolves(undefined);
-      
+      sinon.stub(productsModel, "findById").resolves(undefined);
+
       const result = await productsService.findById(998);
 
       expect(result.type).to.be.equal("PRODUCT_NOT_FOUND");
@@ -45,7 +44,9 @@ describe("Service de Products", function () {
       const result = await productsService.findById(2);
 
       expect(result.type).to.be.equal(null);
-      expect(result.message).to.be.deep.equal(productsMock.allProductsResponse[1]);
+      expect(result.message).to.be.deep.equal(
+        productsMock.allProductsResponse[1]
+      );
     });
   });
 });

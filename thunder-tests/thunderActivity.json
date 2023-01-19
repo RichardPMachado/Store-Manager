@@ -50,12 +50,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-01-17T21:13:18.745Z",
-    "modified": "2023-01-18T23:55:10.031Z",
+    "modified": "2023-01-19T03:55:01.201Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"\"\n}",
+      "raw": "{\n  \"name\": \"afsdfasd\"\n}",
       "form": []
     },
     "tests": []

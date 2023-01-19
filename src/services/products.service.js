@@ -16,14 +16,14 @@ const findById = async (productId) => {
 
 const createProduct = async ({ name }) => {
   const error = await validateInputValue.validateRegisterProduct({ name });
-  if (error) return { type: error.type, message: error.message };
-  
+  if (error.type) return { type: error.type, message: error.message };
   const { id } = await productsModel.createProduct(name);
   const newProduct = await findById(id);
-  if (!newProduct.type) {
-    return { type: null, message: newProduct.message };
+  if (newProduct.type) {
+    return { type: 'PRODUCT_NOT_REGISTER', message: 'Product not register' };
   }
-  return { type: 'PRODUCT_NOT_REGISTER', message: 'Product not register' };
+  console.log(newProduct);
+  return { type: null, message: newProduct.message };
 };
 
 module.exports = {

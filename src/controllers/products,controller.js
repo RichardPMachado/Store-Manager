@@ -21,7 +21,7 @@ const registerProduct = async (req, res) => {
   const newProduct = req.body;
   const { type, message } = await productsService.createProduct(newProduct);
   if (type) return res.status(mapError(type)).json({ message });
-
+    console.log(message);
   res.status(201).json(message);
 };
 module.exports = { listProducts, getProduct, registerProduct };

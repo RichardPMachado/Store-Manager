@@ -16,10 +16,10 @@ const findById = async (productId) => {
 };
 
 const createProduct = async (product) => {
-  console.log(product);
+  // console.log(product);
   const query = 'INSERT INTO StoreManager.products (name) VALUE (?)';
   const [{ insertId }] = await connection.execute(query, [product]);
-
+  console.log(insertId);
   return { id: insertId };
 };
 
