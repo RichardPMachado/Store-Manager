@@ -50,12 +50,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-01-17T21:13:18.745Z",
-    "modified": "2023-01-17T22:04:29.715Z",
+    "modified": "2023-01-18T23:55:10.031Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Produtoolp\"\n}",
+      "raw": "{\n  \"name\": \"\"\n}",
       "form": []
     },
     "tests": []
