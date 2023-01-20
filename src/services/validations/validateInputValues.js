@@ -1,4 +1,14 @@
-const { nameSchema } = require('./schemas');
+const { nameSchema, idSchema } = require('./schemas');
+
+const validateId = async (id) => {
+  const { error } = await idSchema.validate(id);
+  if (error) {
+    return {
+      type: 'EMPTY_VALUE',
+      message: error.message,
+    };
+  }
+};
 
 const validateRegisterProduct = async (product) => {
   const { error } = await nameSchema.validate(product);
@@ -13,4 +23,5 @@ const validateRegisterProduct = async (product) => {
 };
 module.exports = {
   validateRegisterProduct,
+  validateId,
 };

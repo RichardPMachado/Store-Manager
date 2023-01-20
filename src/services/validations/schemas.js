@@ -9,4 +9,10 @@ const nameSchema = Joi.object({
   'any.required': '{{#label}} is required',
   'string.min': '{{#label}} length must be at least 5 characters long',
 });
-module.exports = { idSchema, nameSchema };
+
+const registerSaleSchema = Joi.object({
+  productId: Joi.number().min(1).required(),
+  quantity: Joi.number().min(1).required(),
+});
+
+module.exports = { idSchema, nameSchema, registerSaleSchema };

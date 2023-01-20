@@ -50,12 +50,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-01-17T21:13:18.745Z",
-    "modified": "2023-01-19T03:55:01.201Z",
+    "modified": "2023-01-20T07:00:59.717Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"afsdfasd\"\n}",
+      "raw": "{\n  \"name\": \"afsdfacvbzsd\"\n}",
       "form": []
     },
     "tests": []
@@ -69,12 +69,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-01-19T22:18:40.739Z",
-    "modified": "2023-01-19T22:18:40.739Z",
+    "modified": "2023-01-20T16:11:35.841Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "raw": "[\n  {\n    \"productId\": 9,\n    \"quantity\": 2\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 4\n  }\n]",
       "form": []
     },
     "tests": []
