@@ -59,5 +59,24 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "4707372e-9a8c-4c17-964a-4af8fdd8002e",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales",
+    "url": "http://localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-01-19T22:18:40.739Z",
+    "modified": "2023-01-19T22:18:40.739Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "form": []
+    },
+    "tests": []
   }
 ]

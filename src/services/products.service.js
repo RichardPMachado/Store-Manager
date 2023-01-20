@@ -22,7 +22,7 @@ const createProduct = async ({ name }) => {
   if (newProduct.type) {
     return { type: 'PRODUCT_NOT_REGISTER', message: 'Product not register' };
   }
-  console.log(newProduct);
+
   return { type: null, message: newProduct.message };
 };
 
