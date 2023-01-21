@@ -50,12 +50,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-01-17T21:13:18.745Z",
-    "modified": "2023-01-20T07:00:59.717Z",
+    "modified": "2023-01-20T22:40:39.194Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"afsdfacvbzsd\"\n}",
+      "raw": "{\n  \"name\": \"afsdfavbxcvcxvbxcvbcvbzsd\"\n}",
       "form": []
     },
     "tests": []
@@ -69,14 +69,28 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-01-19T22:18:40.739Z",
-    "modified": "2023-01-20T16:11:35.841Z",
+    "modified": "2023-01-20T23:54:09.730Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "[\n  {\n    \"productId\": 9,\n    \"quantity\": 2\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 4\n  }\n]",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 2\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 4\n  }\n]",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "586993c5-4f0c-41f3-adb9-e7a44a867d11",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales",
+    "url": "http://localhost:3000/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-01-21T02:31:12.122Z",
+    "modified": "2023-01-21T02:31:12.122Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

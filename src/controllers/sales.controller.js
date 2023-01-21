@@ -1,5 +1,13 @@
 const { mapError } = require('../utills/errorMap');
-const { salesService } = require('../services');
+const { salesService } = require('../services/index');
+
+const ListAllSales = async (_req, res) => {
+    const { type, message } = await salesService.findAllSales();
+
+  if (type) return res.status(mapError(type)).json(message);
+
+  res.status(200).json(message);
+};
 
 const registerSale = async (req, res) => {
   const { body } = req;
@@ -9,4 +17,4 @@ const registerSale = async (req, res) => {
   res.status(201).json(message);
 };
 
-module.exports = { registerSale };
+module.exports = { registerSale, ListAllSales };
