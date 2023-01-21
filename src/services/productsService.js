@@ -1,4 +1,4 @@
-const { productsModel } = require('../models/index');
+const productsModel = require('../models/productsModel');
 const validateInputValue = require('./validations/validateInputValues');
 // const schema = require('./validations/schemas');
 

@@ -1,5 +1,5 @@
 const { mapError } = require('../utills/errorMap');
-const { productsService } = require('../services/index');
+const productsService = require('../services/productsService');
 
 const listProducts = async (_req, res) => {
   const { type, message } = await productsService.findAll();

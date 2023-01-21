@@ -5,9 +5,10 @@ const validateId = async (id) => {
   if (error) {
     return {
       type: 'EMPTY_VALUE',
-      message: error.message,
+      message: 'id must be a number',
     };
   }
+  return { type: null, message: '' };
 };
 
 const validateRegisterProduct = async (product) => {
