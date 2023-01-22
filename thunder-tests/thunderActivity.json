@@ -22,9 +22,14 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2023-01-16T19:53:53.368Z",
-    "modified": "2023-01-16T19:53:53.368Z",
+    "modified": "2023-01-22T00:52:12.908Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo do Batman\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
@@ -94,31 +99,60 @@
     "tests": []
   },
   {
-    "_id": "f23ef198-da49-4732-90fc-11c875f4ca92",
-    "colId": "history",
-    "containerId": "",
-    "name": "http://localhost:3000/sales/2",
-    "url": "http://localhost:3000/sales/2",
-    "method": "GET",
-    "sortNum": 0,
-    "created": "2023-01-21T03:42:55.912Z",
-    "modified": "2023-01-21T03:42:55.912Z",
-    "headers": [],
-    "params": [],
-    "tests": []
-  },
-  {
     "_id": "45d87e55-a8ec-47ca-a333-534670d11659",
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/sales/1",
-    "url": "http://localhost:3000/sales/0",
-    "method": "GET",
+    "url": "http://localhost:3000/products/1",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2023-01-21T03:45:25.831Z",
-    "modified": "2023-01-21T23:21:19.091Z",
+    "modified": "2023-01-22T02:15:19.750Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo do Batmandf\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "8f97d996-8fb0-4dfa-9c2f-82b98533cb2e",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/1",
+    "url": "http://localhost:3000/products/1",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-01-22T02:17:04.478Z",
+    "modified": "2023-01-22T02:17:04.478Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo do Batman\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "f07b6c3a-b60f-4f49-8fc7-e8545e1be133",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/199",
+    "url": "http://localhost:3000/products/199",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-01-22T02:40:54.567Z",
+    "modified": "2023-01-22T02:40:54.567Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo do Batman\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]

@@ -1,7 +1,9 @@
 const salesModel = require('../models/salesModel');
 // const productsService = require('./productsService');
 const productsModel = require('../models/productsModel');
-const { validateRegisterProduct, validateId } = require('./validations/validateInputValues');
+const {
+  // validateRegisterProduct,
+  validateId } = require('./validations/validateInputValues');
 // const { idSchema } = require('./validations/schemas');
 
 const findAllSales = async () => {

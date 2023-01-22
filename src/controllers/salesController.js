@@ -4,7 +4,7 @@ const salesService = require('../services/salesService');
 const listAllSales = async (_req, res) => {
   const { type, message } = await salesService.findAllSales();
   if (type) return res.status(mapError(type)).json(message);
-  res.status(200).json(message);
+  return res.status(200).json(message);
 };
 
 const getSale = async (req, res) => {
@@ -13,7 +13,7 @@ const getSale = async (req, res) => {
  
   if (type) return res.status(mapError(type)).json({ message });
 
-  res.status(200).json(message);
+  return res.status(200).json(message);
 };
 
 const registerSale = async (req, res) => {
@@ -23,7 +23,7 @@ const registerSale = async (req, res) => {
  
   if (type) return res.status(mapError(type)).json({ message });
  
-  res.status(201).json(message);
+  return res.status(201).json(message);
 };
 
 module.exports = {
