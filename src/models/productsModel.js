@@ -24,11 +24,23 @@ const createProduct = async (product) => {
 };
 
 const updateProduct = async ({ productId, name }) => {
-  console.log(productId);
   const [result] = await connection.execute(
     'UPDATE StoreManager.products SET name = (?) WHERE id = (?)',
     [name, productId],
   );
   return result;
 };
-module.exports = { findAll, findById, createProduct, updateProduct }; 
+
+const deleteProduct = async (productId) => {
+  const query = 'DELETE FROM StoreManager.products WHERE products.id = ?';
+  const [newProduct] = await connection.execute(query, [productId]);
+  return newProduct.affectedRows;
+};
+
+module.exports = {
+  findAll,
+  findById,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+}; 

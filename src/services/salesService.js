@@ -3,8 +3,9 @@ const salesModel = require('../models/salesModel');
 const productsModel = require('../models/productsModel');
 const {
   // validateRegisterProduct,
-  validateId } = require('./validations/validateInputValues');
-// const { idSchema } = require('./validations/schemas');
+  validateId,
+} = require('./validations/validateInputValues');
+const { idSchema } = require('./validations/schemas');
 
 const findAllSales = async () => {
    const sales = await salesModel.findAllSales();
@@ -23,10 +24,9 @@ const findSaleById = async (saleId) => {
 };
 
 const createSale = async (sales) => {
-  // const error = validateRegisterSale.validate(sales);
-  // if (error.type) return error;
-  
   const validationProduct = sales.map(async (sale) => {
+    const error = idSchema.validate(sale.productId);
+    if (error.type) return error;
     await productsModel.findById(sale.productId);
   });
   const validationPromiseProduct = await Promise.all(validationProduct);
@@ -34,7 +34,7 @@ const createSale = async (sales) => {
     return { type: 'PRODUCT_NOT_REGISTER', message: 'Product not found' };
   }
   const saleId = await salesModel.createSale();
-  console.log();
+
   await Promise.all(sales
     .map(async ({ productId, quantity }) => {
       await salesModel.createProductsSale(saleId, productId, quantity);
