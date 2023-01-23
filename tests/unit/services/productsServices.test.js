@@ -2,10 +2,9 @@ const chai = require("chai");
 const sinon = require("sinon");
 const chaiHttp = require("chai-http");
 const sinonChai = require("sinon-chai");
-const { productsService } = require("../../../src/services");
-const { productsModel } = require("../../../src/models");
+const productsService = require("../../../src/services/productsService");
+const productsModel= require("../../../src/models/productsModel");
 const productsMock = require("../../../__tests__/_dataMock");
-const { findById } = require("../../../src/models/products.model");
 const { expect } = chai;
 
 
