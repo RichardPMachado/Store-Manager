@@ -23,7 +23,6 @@ const findSaleById = async (saleId) => {
   WHERE sp.sale_id = ${saleId}
   ORDER BY sp.sale_id ASC, product_id ASC;`;
   const [result] = await connection.execute(query);
-  console.log(result);
   return result;
 };
 

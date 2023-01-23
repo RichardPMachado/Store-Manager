@@ -19,7 +19,7 @@ const getSale = async (req, res) => {
 const registerSale = async (req, res) => {
   const { body } = req;
   const { type, message } = await salesService.createSale(body);
-  console.log(type);
+  console.log(message);
  
   if (type) return res.status(mapError(type)).json({ message });
  

@@ -5,6 +5,7 @@ const errorMap = {
   PRODUCT_CONFLICT: 409,
   PRODUCT_NOT_REGISTER: 501,
   SALE_NOT_FOUND: 404,
+
 };
 
 const mapError = (type) => errorMap[type] || 500;

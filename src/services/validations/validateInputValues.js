@@ -1,4 +1,7 @@
-const { nameSchema, idSchema } = require('./schemas');
+const {
+  // nameSchema,
+  idSchema, registerSaleSchema, nameSchema,
+} = require('./schemas');
 
 const validateId = async (id) => {
   const { error } = await idSchema.validate(id);
@@ -13,7 +16,6 @@ const validateId = async (id) => {
 
 const validateRegisterProduct = async (product) => {
   const { error } = await nameSchema.validate(product);
-  console.log(product);
   if (error) {
     return {
       type: product.name ? 'INVALID_VALUE' : 'EMPTY_VALUE',
@@ -22,7 +24,21 @@ const validateRegisterProduct = async (product) => {
   }
   return { type: null, message: product.name };
 };
+
+const validateRegisterSale = async (sale) => {
+  const { error } = await registerSaleSchema.validate(sale);
+  if (error) {
+    // console.log(error.message);
+    return {
+      type: !error.message.includes('is required') ? 'INVALID_VALUE' : 'EMPTY_VALUE',
+      message: error.message,
+    };
+  }
+  return { type: null, message: sale };
+};
+
 module.exports = {
   validateRegisterProduct,
+  validateRegisterSale,
   validateId,
 };

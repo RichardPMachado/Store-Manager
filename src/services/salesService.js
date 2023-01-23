@@ -1,11 +1,8 @@
 const salesModel = require('../models/salesModel');
-// const productsService = require('./productsService');
-const productsModel = require('../models/productsModel');
+const productsService = require('./productsService');
 const {
-  // validateRegisterProduct,
-  validateId,
+  validateId, validateRegisterSale,
 } = require('./validations/validateInputValues');
-const { idSchema } = require('./validations/schemas');
 
 const findAllSales = async () => {
    const sales = await salesModel.findAllSales();
@@ -24,22 +21,24 @@ const findSaleById = async (saleId) => {
 };
 
 const createSale = async (sales) => {
-  const validationProduct = sales.map(async (sale) => {
-    const error = idSchema.validate(sale.productId);
-    if (error.type) return error;
-    await productsModel.findById(sale.productId);
-  });
+  const validationProduct = sales.map(({ productId,
+    quantity }) => validateRegisterSale({ productId, quantity }));
   const validationPromiseProduct = await Promise.all(validationProduct);
-  if (validationPromiseProduct.some((product) => console.log(product))) {   
-    return { type: 'PRODUCT_NOT_REGISTER', message: 'Product not found' };
+  const check = validationPromiseProduct.find(({ type,
+    message }) => (type === null ? false : { type, message }));
+  if (check !== undefined) return check;
+  
+  const getProduct = await sales.map(({ productId }) => productsService.findById(productId));
+  const ValidateGetProduct = await Promise.all(getProduct);
+  if (ValidateGetProduct
+    .some((e) => e.type === 'PRODUCT_NOT_FOUND')) {
+    return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' }; 
   }
-  const saleId = await salesModel.createSale();
-
-  await Promise.all(sales
-    .map(async ({ productId, quantity }) => {
-      await salesModel.createProductsSale(saleId, productId, quantity);
-    }));
-  return { type: null, message: { id: saleId, itemsSold: sales } };
+  const id = await salesModel.createSale();
+  await Promise.all(sales.map(({ productId, quantity }) => salesModel
+    .createProductsSale(id, productId, quantity)));
+  const newSale = { id, itemsSold: sales };
+  return { type: null, message: newSale };
 };
 
 module.exports = {
