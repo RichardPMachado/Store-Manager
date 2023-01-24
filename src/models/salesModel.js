@@ -20,9 +20,9 @@ const findSaleById = async (saleId) => {
   FROM StoreManager.sales AS s
   INNER JOIN StoreManager.sales_products AS sp
   ON s.id = sp.sale_id
-  WHERE sp.sale_id = ${saleId}
+  WHERE sp.sale_id = (?)
   ORDER BY sp.sale_id ASC, product_id ASC;`;
-  const [result] = await connection.execute(query);
+  const [result] = await connection.execute(query, [saleId]);
   return result;
 };
 
